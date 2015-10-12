@@ -5,20 +5,19 @@ var Order = Backbone.Model.extend({
     };
   },
 
-  addItem: function(order) {
-    if(this.get('orders')) {
-      this.set('orders', this.get('orders').concat([order]));
-    }
+  addOrder: function(menu) {
+      this.set('order', this.get('order').concat([menu]));
+      console.log(this.get('order'));
   },
 
-  removeItem: function(menu){
+  removeOrder: function(menu){
     this.set('order', _.without(this.get('order'),menu));
+  },
+
+
+  createOrder: function(order) {
+    return _.contains(this.get('order'), order);
   }
-
-
-//   createOrder: function(order) {
-//     return _contains(this.get('order'), menu);
-//   }
 });
 
-export default Order;
+export default new Order();

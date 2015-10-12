@@ -48,7 +48,34 @@ body {
 //
 .hero-header {
   max-width: 100%;
-  height: 230px;
+  height: 250px;
   background-color: maroon;
+}
 
+.search {
+  height: 60px;
+  background-color: white;
+  border-bottom: 1px solid rgba(232, 232, 232, 1);
+}
+
+input.search-menu {
+  margin: 0;
+  border: none;
+  border-style: hidden;
+  border-bottom: 1px solid black;
+  outline: none;
+  width: 332px;
+  box-shadow: none;
+  margin-left: 200px;
+}
+
+fieldset {
+  margin: 0;
+  padding: 10px;
+  padding-bottom: 5px;
+}
+
+.search-div {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
