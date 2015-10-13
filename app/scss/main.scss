@@ -46,10 +46,21 @@ body {
 //   }
 // }
 //
+
+li {
+  list-style: none;
+}
+
 .hero-header {
   max-width: 100%;
   height: 250px;
   background-color: maroon;
+  text-align: center;
+  vertical-align: center;
+}
+
+.thai {
+  color: white;
 }
 
 .search {

@@ -137,12 +137,24 @@ require.register('views/order-view', function (exports, require, module) {
     var _viewsMenuItemView2 = _interopRequireDefault(_viewsMenuItemView);
     var _modelsMenuItemCollection = require('models/menu-item-collection');
     var _modelsMenuItemCollection2 = _interopRequireDefault(_modelsMenuItemCollection);
+    var _modelsOrder = require('models/order');
+    var _modelsOrder2 = _interopRequireDefault(_modelsOrder);
     var OrderView = Backbone.View.extend({
         template: JST['order'],
+        initialize: function initialize() {
+            this.listenTo(_modelsOrder2['default'], 'change', this.render);
+        },
         render: function render() {
             console.log('tasty');
-            this.$el.html(this.template(this.model));
+            this.$el.html(this.template(this.present()));
             return this;
+        },
+        present: function present() {
+            return {
+                order: _modelsOrder2['default'].get('order').map(function (i) {
+                    return i.toJSON();
+                })
+            };
         }
     });
     exports['default'] = OrderView;
